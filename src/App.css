@@ -1,39 +1,67 @@
-.App {
-  text-align: center;
+.calc_block {
+  box-shadow: 0px 4px 6px 0px #0000001A;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 12px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calc_result {
+  background-color: #F3F4F6;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.calculate_block {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.calculate_button {
+  border: 1px solid #E2E3E5;
+  background-color: #E2E3E5;
+  border-radius: 6px;
+  flex: 1;
+}
+.button_wrapper {
+  display: flex;
+  padding: 4px;
+}
+.calc_button {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid #E2E3E5;
+  background-color: unset;
+}
+.calc_button:active {
+  border-color: blue;
+}
+.disabled {
+  opacity: 0.5;
+}
+.highlight {
+  height: 2px;
+  width: 100%;
+  background-color: unset;
+}
+.highlight.active {
+  background-color: blue;
+}
+
+.build_zone_wrapper {
+  display: flex;
+}
+.build_zone {
+  border: 2px dashed #C4C4C4;
+  border-radius: 5px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
 }
-
-.App-link {
-  color: rgb(112, 76, 182);
+.build_zone_message_heading {
+  color: #5D5FEF;
 }
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.build_zone_message_text {
+  color: #6B7280;
+  font-size: 12px;
+}
+.build_zone_highlight {
+  background-color: #F0F9FF;
 }
