@@ -72,6 +72,10 @@ body {
   opacity: 0.5;
 }
 
+.disabled_cursor {
+  cursor: no-drop;
+}
+
 .highlight {
   height: 2px;
   width: 100%;
@@ -79,7 +83,7 @@ body {
 }
 
 .highlight.active {
-  background-color: blue;
+  background-color: #5D5FEF;
 }
 
 .build_zone_wrapper {

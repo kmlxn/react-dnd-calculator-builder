@@ -20,10 +20,21 @@ export default function BuildZone () {
   const mode = useSelector(getMode)
 
   const handleDrop = ({ blockName, dragOrigin }) => {
+    let position = highlightedElemIndexRef.current
+
+    if (dragOrigin === 'BuildZoneSection') {
+      const blockPlace = placedBlocksRef.current
+        .findIndex(blockName_ => blockName_ === blockName)
+
+      if (highlightedElemIndexRef.current > blockPlace + 1) {
+        position -= 1;
+      }
+    }
+
     dispatch(place({
       blockName,
       dragOrigin,
-      position: highlightedElemIndexRef.current
+      position
     }))
   }
 
@@ -59,6 +70,15 @@ export default function BuildZone () {
         closestHighlightIndex = 1
       }
 
+      if (item.dragOrigin === 'BuildZoneSection') {
+        const blockPlace = placedBlocksRef.current
+          .findIndex(blockName => blockName === item.blockName)
+
+        if (closestHighlightIndex === blockPlace + 1) {
+          closestHighlightIndex -= 1;
+        }
+      }
+
       setHighlightedElemIndex(closestHighlightIndex)
     }
   }))
@@ -92,6 +112,7 @@ export default function BuildZone () {
                   <Block
                     key={blockName}
                     section='BuildZoneSection'
+                    canDrag={blockName !== 'ResultBlock'}
                   />
                   <Highlight
                     shouldBeShown={isOver && highlightedElemIndex === i + 1}

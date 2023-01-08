@@ -31,6 +31,10 @@ function Block ({ name, section, canDrag = true, children }) {
     }
   }))
 
+  const disabledClass = !canDrag && section !== 'BuildZoneSection'
+    ? ' disabled' : '' 
+  const disabledCursor = !canDrag ? ' disabled_cursor' : ''
+
   return (
     <div
       onDoubleClick={() => {
@@ -39,7 +43,7 @@ function Block ({ name, section, canDrag = true, children }) {
         }
       }}
       ref={drag}
-      className={'calc_block' + (canDrag ? '' : ' disabled')}
+      className={'calc_block' + disabledClass + disabledCursor}
     >
       {children}
     </div>
