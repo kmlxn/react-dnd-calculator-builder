@@ -27,9 +27,14 @@
   border-radius: 6px;
   border: 1px solid #E2E3E5;
   background-color: unset;
+  transition: background-color 100ms, color 100ms, border-color 100ms;
 }
 .calc_button:active {
-  border-color: blue;
+  background-color: #5D5FEF;
+  color: white;
+}
+.calc_button:focus {
+  border-color: #5D5FEF;
 }
 .disabled {
   opacity: 0.5;
@@ -55,6 +60,9 @@
   flex: 1;
   flex-direction: column;
 }
+.build_zone_runtime {
+  border: none;
+}
 .build_zone_message_heading {
   color: #5D5FEF;
 }
@@ -64,4 +72,40 @@
 }
 .build_zone_highlight {
   background-color: #F0F9FF;
+}
+.mode_switch {
+  background-color: #F3F4F6;
+  border-radius: 6px;
+  display: flex;
+  padding: 1px;
+  margin-bottom: 30px;
+}
+.button_for_radio {
+  padding: 10px 12px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #F3F4F6;
+  border-radius: 6px;
+  transition: background-color 100ms;
+}
+.hidden_radio {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+.hidden_radio:active + .button_for_radio {
+  background-color: #5D5FEF;
+}
+.hidden_radio:checked + .button_for_radio {
+  background-color: white;
+  border: 1px solid #E2E3E5;
+}
+.hidden_radio:checked + .button_for_radio path {
+  stroke: #5D5FEF;
+}
+.button_for_radio svg {
+  margin-right: 8px;
 }

@@ -1,13 +1,26 @@
+import { useSelector, useDispatch } from 'react-redux';
 import BlocksSection from './BlocksSection';
 import BuildZoneSection from './BuildZoneSection';
+import Switch from './Switch';
+import { getMode, switchMode } from '../store';
 
 export default function Calculator() {
-    return <div className="row">
-        <div className="col-md-4">
-            <BlocksSection />
+    const mode = useSelector(getMode);
+
+    return <>
+        <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
+                <Switch />
+            </div>
         </div>
-        <div className="col-md-4">
-            <BuildZoneSection />
+        <div className="row">
+            <div className="col-md-4">
+                {mode === "build" ? <BlocksSection /> : <></>}
+            </div>
+            <div className="col-md-4">
+                <BuildZoneSection />
+            </div>
         </div>
-    </div>
+    </>
 }
