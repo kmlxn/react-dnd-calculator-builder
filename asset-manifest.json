@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/react-dnd-calculator-builder/static/css/main.53de1660.css",
-    "main.js": "/react-dnd-calculator-builder/static/js/main.80d74e18.js",
+    "main.css": "/react-dnd-calculator-builder/static/css/main.985f0934.css",
+    "main.js": "/react-dnd-calculator-builder/static/js/main.c4024cdb.js",
     "static/js/787.c4026f6a.chunk.js": "/react-dnd-calculator-builder/static/js/787.c4026f6a.chunk.js",
     "index.html": "/react-dnd-calculator-builder/index.html",
-    "static/media/logo.svg": "/react-dnd-calculator-builder/static/media/logo.b2e5a01e505f739f1484b881277d5186.svg",
-    "main.53de1660.css.map": "/react-dnd-calculator-builder/static/css/main.53de1660.css.map",
-    "main.80d74e18.js.map": "/react-dnd-calculator-builder/static/js/main.80d74e18.js.map",
+    "main.985f0934.css.map": "/react-dnd-calculator-builder/static/css/main.985f0934.css.map",
+    "main.c4024cdb.js.map": "/react-dnd-calculator-builder/static/js/main.c4024cdb.js.map",
     "787.c4026f6a.chunk.js.map": "/react-dnd-calculator-builder/static/js/787.c4026f6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53de1660.css",
-    "static/js/main.80d74e18.js"
+    "static/css/main.985f0934.css",
+    "static/js/main.c4024cdb.js"
   ]
 }
