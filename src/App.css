@@ -1,85 +1,135 @@
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+}
+
 .calc_block {
   box-shadow: 0px 4px 6px 0px #0000001A;
   border-radius: 4px;
   padding: 4px;
   margin-bottom: 12px;
 }
+
 .calc_result {
   background-color: #F3F4F6;
   padding: 4px 8px;
   border-radius: 6px;
+  font-size: 36px;
+  font-weight: 800;
+  text-align: right;
 }
+
 .calculate_block {
   display: flex;
 }
+
 .calculate_button {
-  border: 1px solid #E2E3E5;
-  background-color: #E2E3E5;
+  border: none;
+  background-color: #5D5FEF;
   border-radius: 6px;
   flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  font-weight: 500;
+  color: white;
 }
+
+.calculate_button:active {
+  background-color: #7677e9;
+}
+
 .button_wrapper {
   display: flex;
   padding: 4px;
 }
+
 .calc_button {
   flex: 1;
   border-radius: 6px;
   border: 1px solid #E2E3E5;
   background-color: unset;
+  padding: 16px 32px;
   transition: background-color 100ms, color 100ms, border-color 100ms;
+  font-weight: 500;
 }
+
+.calc_operation_button {
+  padding: 16px 22px;
+}
+
 .calc_button:active {
   background-color: #5D5FEF;
   color: white;
 }
+
 .calc_button:focus {
   border-color: #5D5FEF;
 }
+
 .disabled {
   opacity: 0.5;
 }
+
 .highlight {
   height: 2px;
   width: 100%;
   background-color: unset;
 }
+
 .highlight.active {
   background-color: blue;
 }
 
 .build_zone_wrapper {
   display: flex;
+  min-height: 480px;
 }
+
 .build_zone {
   border: 2px dashed #C4C4C4;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex: 1;
   flex-direction: column;
 }
+
 .build_zone_runtime {
   border: none;
 }
+
+.build_zone_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .build_zone_message_heading {
   color: #5D5FEF;
+  font-weight: 500;
 }
+
 .build_zone_message_text {
   color: #6B7280;
-  font-size: 12px;
+  font-size: 14px;
 }
+
 .build_zone_highlight {
   background-color: #F0F9FF;
 }
+
 .mode_switch {
   background-color: #F3F4F6;
   border-radius: 6px;
   display: flex;
   padding: 1px;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
+
 .button_for_radio {
   padding: 10px 12px;
   flex-grow: 1;
@@ -91,21 +141,26 @@
   border-radius: 6px;
   transition: background-color 100ms;
 }
+
 .hidden_radio {
   position: fixed;
   opacity: 0;
   pointer-events: none;
 }
-.hidden_radio:active + .button_for_radio {
+
+.hidden_radio:active+.button_for_radio {
   background-color: #5D5FEF;
 }
-.hidden_radio:checked + .button_for_radio {
+
+.hidden_radio:checked+.button_for_radio {
   background-color: white;
   border: 1px solid #E2E3E5;
 }
-.hidden_radio:checked + .button_for_radio path {
+
+.hidden_radio:checked+.button_for_radio path {
   stroke: #5D5FEF;
 }
+
 .button_for_radio svg {
   margin-right: 8px;
 }

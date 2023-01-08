@@ -120,7 +120,7 @@ function Highlight ({ refCallback, shouldBeShown }) {
 
 function Empty () {
   return (
-    <>
+    <div className='build_zone_message'>
       <svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path d='M18.7778 1V5.44444' stroke='black' strokeWidth='2' strokeLinecap='round' />
         <path d='M21 3.22222L16.5556 3.22222' stroke='black' strokeWidth='2' strokeLinecap='round' />
@@ -129,7 +129,7 @@ function Empty () {
         <circle cx='12.1111' cy='7.66667' r='0.555556' fill='black' />
       </svg>
       <span className='build_zone_message_heading'>Перетащите сюда</span>
-      <span className='build_zone_message_text'>любой элемент из левой панели</span>
-    </>
+      <span className='build_zone_message_text'>любой элемент<br/>из левой панели</span>
+    </div>
   )
 }
