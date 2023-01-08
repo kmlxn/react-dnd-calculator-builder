@@ -57,7 +57,6 @@ export const calculatorSlice = createSlice({
         },
         inputDigit(state, { payload }) {
             let newNumber = parseFloat(state.newNumber + payload.digit);
-            console.log('newNumber', newNumber);
 
             state.result = newNumber;
 

@@ -1,8 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import BlocksSection from './BlocksSection';
 import BuildZoneSection from './BuildZoneSection';
 import Switch from './Switch';
-import { getMode, switchMode } from '../store';
+import { getMode } from '../store';
 
 export default function Calculator() {
     const mode = useSelector(getMode);

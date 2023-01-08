@@ -2,9 +2,7 @@ import { useRef } from 'react';
 import { useDrag } from "react-dnd";
 import {
     getPlacedBlocks,
-    place,
     remove,
-    getState,
     getResult,
     performMath,
     calculate,
@@ -22,7 +20,7 @@ function Block({ name, section, canDrag = true, children }) {
     let modeRef = useRef();
     modeRef.current = mode;
 
-    const [{ isDragging }, drag] = useDrag(() => ({
+    const [, drag] = useDrag(() => ({
         type: "block",
         item: { blockName: name, dragOrigin: section },
         collect: (monitor) => ({
@@ -35,7 +33,7 @@ function Block({ name, section, canDrag = true, children }) {
 
     return <div
         onDoubleClick={() => {
-            if (section === "BuildZoneSection" && modeRef.current === "build") {
+            if (section === 'BuildZoneSection' && modeRef.current === "build") {
                 dispatch(remove({ blockName: name }))
             }
         }}

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useDrop } from "react-dnd";
 import { useState } from "react";
 import * as blockComponents from './BlocksSection'
-import { getPlacedBlocks, place, remove, getState, getMode } from '../store'
+import { getPlacedBlocks, place, getMode } from '../store'
 
 export default function BuildZone() {
     const [highlightedElemIndex, setHighlightedElemIndex] = useState();
