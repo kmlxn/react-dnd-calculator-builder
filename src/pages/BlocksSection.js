@@ -32,8 +32,9 @@ function Block ({ name, section, canDrag = true, children }) {
   }))
 
   const disabledClass = !canDrag && section !== 'BuildZoneSection'
-    ? ' disabled' : '' 
-  const disabledCursor = !canDrag ? ' disabled_cursor' : ''
+    ? ' disabled'
+    : ''
+  const disabledCursor = !canDrag && mode !== 'runtime' ? ' disabled_cursor' : ''
 
   return (
     <div

@@ -89,11 +89,13 @@ body {
 .build_zone_wrapper {
   display: flex;
   min-height: 480px;
+  border: 2px dashed #C4C4C4;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .build_zone {
-  border: 2px dashed #C4C4C4;
-  border-radius: 5px;
   display: flex;
   align-items: stretch;
   flex: 1;

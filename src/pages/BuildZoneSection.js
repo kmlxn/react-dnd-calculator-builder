@@ -27,7 +27,7 @@ export default function BuildZone () {
         .findIndex(blockName_ => blockName_ === blockName)
 
       if (highlightedElemIndexRef.current > blockPlace + 1) {
-        position -= 1;
+        position -= 1
       }
     }
 
@@ -75,7 +75,7 @@ export default function BuildZone () {
           .findIndex(blockName => blockName === item.blockName)
 
         if (closestHighlightIndex === blockPlace + 1) {
-          closestHighlightIndex -= 1;
+          closestHighlightIndex -= 1
         }
       }
 
@@ -84,48 +84,48 @@ export default function BuildZone () {
   }))
 
   const empty = mode === 'build' ? <Empty /> : <></>
-  const buildZoneClass = mode === 'build'
-    ? 'build_zone' + (isOver ? ' build_zone_highlight' : '')
-    : 'build_zone build_zone_runtime'
+
+  let buildZoneWrapperClass = 'build_zone_wrapper'
+  buildZoneWrapperClass += mode === 'runtime' ? ' build_zone_runtime' : ''
+  buildZoneWrapperClass += isOver ? ' build_zone_highlight' : ''
 
   return (
-    <div className='build_zone_wrapper'>
-      <div
-        className={buildZoneClass}
-        ref={drop}
-      >
-        {!placedBlocks.length
-          ? empty
-          : <>
-            <Highlight
-              shouldBeShown={isOver && highlightedElemIndex === 0}
-              key='highlight-0'
-              refCallback={el => {
-                highlightsRef.current[0] = el
-              }}
-            />
+    <div className={buildZoneWrapperClass} ref={drop}>
+      {!placedBlocks.length
+        ? empty
+        : <div
+            className='build_zone'
+          >
 
-            {placedBlocks.map((blockName, i) => {
-              const Block = blockComponents[blockName]
-              return (
-                <React.Fragment key={blockName}>
-                  <Block
-                    key={blockName}
-                    section='BuildZoneSection'
-                    canDrag={blockName !== 'ResultBlock'}
-                  />
-                  <Highlight
-                    shouldBeShown={isOver && highlightedElemIndex === i + 1}
-                    key={'highlight-' + (i + 1)}
-                    refCallback={el => {
-                      highlightsRef.current[i + 1] = el
-                    }}
-                  />
-                </React.Fragment>
-              )
-            })}
-          </>}
-      </div>
+          <Highlight
+            shouldBeShown={isOver && highlightedElemIndex === 0}
+            key='highlight-0'
+            refCallback={el => {
+              highlightsRef.current[0] = el
+            }}
+          />
+
+          {placedBlocks.map((blockName, i) => {
+            const Block = blockComponents[blockName]
+            return (
+              <React.Fragment key={blockName}>
+                <Block
+                  key={blockName}
+                  section='BuildZoneSection'
+                  canDrag={blockName !== 'ResultBlock' && mode === 'build'}
+                />
+                <Highlight
+                  shouldBeShown={isOver && highlightedElemIndex === i + 1}
+                  key={'highlight-' + (i + 1)}
+                  refCallback={el => {
+                    highlightsRef.current[i + 1] = el
+                  }}
+                />
+              </React.Fragment>
+            )
+          })}
+          </div>}
+
     </div>
   )
 }
@@ -150,7 +150,7 @@ function Empty () {
         <circle cx='12.1111' cy='7.66667' r='0.555556' fill='black' />
       </svg>
       <span className='build_zone_message_heading'>Перетащите сюда</span>
-      <span className='build_zone_message_text'>любой элемент<br/>из левой панели</span>
+      <span className='build_zone_message_text'>любой элемент<br />из левой панели</span>
     </div>
   )
 }
