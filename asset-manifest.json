@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-dnd-calculator-builder/static/css/main.985f0934.css",
-    "main.js": "/react-dnd-calculator-builder/static/js/main.c4024cdb.js",
+    "main.css": "/react-dnd-calculator-builder/static/css/main.d9f22e52.css",
+    "main.js": "/react-dnd-calculator-builder/static/js/main.bacc7858.js",
     "static/js/787.c4026f6a.chunk.js": "/react-dnd-calculator-builder/static/js/787.c4026f6a.chunk.js",
     "index.html": "/react-dnd-calculator-builder/index.html",
-    "main.985f0934.css.map": "/react-dnd-calculator-builder/static/css/main.985f0934.css.map",
-    "main.c4024cdb.js.map": "/react-dnd-calculator-builder/static/js/main.c4024cdb.js.map",
+    "main.d9f22e52.css.map": "/react-dnd-calculator-builder/static/css/main.d9f22e52.css.map",
+    "main.bacc7858.js.map": "/react-dnd-calculator-builder/static/js/main.bacc7858.js.map",
     "787.c4026f6a.chunk.js.map": "/react-dnd-calculator-builder/static/js/787.c4026f6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.985f0934.css",
-    "static/js/main.c4024cdb.js"
+    "static/css/main.d9f22e52.css",
+    "static/js/main.bacc7858.js"
   ]
 }
