@@ -21,8 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint": ".\\node_modules\\.bin\\standard",
+    "lint-fix": ".\\node_modules\\.bin\\standard --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +45,12 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "standard": "^17.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "build/*"
+    ]
   }
 }
